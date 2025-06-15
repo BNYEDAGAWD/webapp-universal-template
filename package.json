@@ -1,19 +1,12 @@
 {
   "name": "webapp-universal-template",
   "version": "1.0.0",
-  "description": "Universal template for Brandon's web app projects in WSL Ubuntu",
+  "description": "Universal template for Brandon's web app projects",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server 8000 || python -m http.server 8000",
-    "dev": "python3 -m http.server 8000 --bind 127.0.0.1",
-    "build": "echo 'Build completed - static files ready'",
-    "deploy": "git add . && git commit -m 'deploy: update web app' && git push"
+    "start": "python3 -m http.server 8000",
+    "deploy": "git add . && git commit -m 'deploy: update' && git push"
   },
-  "keywords": ["web-app", "template", "github-pages", "google-apps-script", "wsl", "ubuntu"],
   "author": "Brandon Nye",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BNYEDAGAWD/webapp-universal-template.git"
-  }
+  "license": "MIT"
 }
