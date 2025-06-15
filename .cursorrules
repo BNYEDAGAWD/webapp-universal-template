@@ -1,0 +1,95 @@
+# BRANDON'S UNIVERSAL WEB APP TEMPLATE - AUTO-REFERENCE FOR ALL CLAUDE CODE PROJECTS
+
+This is Brandon's standardized web app development template for WSL Ubuntu + Cursor + Claude Code.
+Reference this automatically for every new project.
+
+## DEVELOPMENT ENVIRONMENT
+- OS: Windows 11 with WSL Ubuntu
+- Editor: Cursor IDE with Claude Code integration
+- Terminal: WSL Ubuntu bash
+- Primary Deployment: GitHub Pages + Google Apps Script
+- Local Development: WSL file system with Windows integration
+
+## CORE ARCHITECTURE
+- Frontend: HTML5, CSS3, Modern JavaScript (ES6+)
+- Backend: Google Apps Script with Gemini API integration
+- Styling: Bootstrap 5 or Tailwind CSS for responsive design
+- AI Integration: Claude (development via Cursor) + Gemini (runtime via Apps Script)
+- Version Control: Git with GitHub integration
+
+## WSL-SPECIFIC CONSIDERATIONS
+- File paths use Linux conventions (/home/user/GitHub/)
+- Use WSL2 for optimal performance
+- Access Windows tools through /mnt/c/ when needed
+- Cursor can edit WSL files directly
+- GitHub CLI authentication works in WSL context
+
+## PROJECT STRUCTURE STANDARD
+```
+project-name/
+├── .cursorrules              # This template (auto-copied)
+├── index.html               # Main entry point
+├── css/
+│   └── style.css           # Custom styles
+├── js/
+│   └── app.js              # Main application logic
+├── google-apps-script/
+│   └── Code.gs             # Apps Script backend
+├── assets/
+│   ├── images/             # Image assets
+│   ├── icons/              # Icon files
+│   └── fonts/              # Custom fonts
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions deployment
+└── README.md               # Project documentation
+```
+
+## TECHNICAL REQUIREMENTS
+- Mobile-first responsive design
+- Semantic HTML5 with accessibility compliance
+- Modern JavaScript with ES6+ features
+- Google Workspace API integration capabilities
+- Gemini AI integration via Google Apps Script
+- Automated GitHub Pages deployment via Actions
+- Cross-browser compatibility and performance optimization
+
+## DEVELOPMENT WORKFLOW
+1. Create project using `new-webapp project-name` command
+2. Open in Cursor from WSL: `cursor .`
+3. Claude automatically references this template
+4. Implement core features with AI assistance
+5. Set up Google Apps Script backend for AI/API integrations
+6. Test locally using Python/Node.js server
+7. Commit and push to trigger GitHub Pages deployment
+8. Test deployed version and iterate
+
+## GOOGLE APPS SCRIPT INTEGRATION
+- Web App deployment for backend API endpoints
+- Gemini API integration for runtime AI features
+- Google Workspace APIs (Sheets, Docs, Drive, Gmail, Calendar)
+- Environment variable management via PropertiesService
+- CORS handling for cross-origin requests from GitHub Pages
+
+## AI INTEGRATION PATTERNS
+- Claude Code for development assistance, code generation, debugging
+- Gemini for runtime AI features, content generation, data analysis
+- Consistent prompt templates stored in repository for reuse
+- Proper error handling and fallback patterns for AI failures
+- Rate limiting and cost management for API usage
+
+## WSL DEVELOPMENT COMMANDS
+- Start project: `new-webapp project-name`
+- Open in Cursor: `cursor project-name` or `cursor .`
+- Local server: `serve-local` (Python HTTP server)
+- Deploy: `deploy-webapp` (git add, commit, push)
+- GitHub auth: `gh auth login`
+
+## PERFORMANCE STANDARDS
+- Page load time: < 2 seconds on 3G
+- Lighthouse performance score: 90+
+- Mobile-first responsive design
+- Accessibility: WCAG 2.1 AA compliance
+- SEO optimization: 95+ Lighthouse score
+
+Claude: Always reference this template and implement these standards automatically for Brandon's WSL Ubuntu projects.
