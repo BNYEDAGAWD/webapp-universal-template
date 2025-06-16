@@ -129,21 +129,23 @@ class RMIDashboard {
         this.charts.ecpm = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Kargo Premium', 'Industry Standard', 'Competitor A', 'Competitor B'],
+                labels: ['Runway Display', 'Venti Animated', 'Enhanced Pre-Roll', 'Venti Video', 'Industry Avg'],
                 datasets: [{
                     label: 'eCPM Performance ($)',
-                    data: [12.49, 5.00, 4.20, 6.80],
+                    data: [13.20, 12.80, 12.49, 11.90, 5.00],
                     backgroundColor: [
+                        'rgba(16, 185, 129, 0.8)',
                         'rgba(107, 70, 193, 0.8)',
-                        'rgba(156, 163, 175, 0.8)',
-                        'rgba(239, 68, 68, 0.8)',
-                        'rgba(245, 158, 11, 0.8)'
+                        'rgba(59, 130, 246, 0.8)',
+                        'rgba(245, 158, 11, 0.8)',
+                        'rgba(156, 163, 175, 0.8)'
                     ],
                     borderColor: [
+                        'rgb(16, 185, 129)',
                         'rgb(107, 70, 193)',
-                        'rgb(156, 163, 175)',
-                        'rgb(239, 68, 68)',
-                        'rgb(245, 158, 11)'
+                        'rgb(59, 130, 246)',
+                        'rgb(245, 158, 11)',
+                        'rgb(156, 163, 175)'
                     ],
                     borderWidth: 2
                 }]
@@ -501,9 +503,9 @@ Based on our H1 2025 RMI campaign analysis ($2.38M revenue, 190.6M impressions, 
 VIEWABILITY MEASUREMENT STRATEGY: IAS + DOUBLEVERIFY DUAL VALIDATION
 
 DoubleVerify (Primary)
-- 91.7% Runway | 76.7% Enhanced Pre-Roll
-- ✅ Proven H1 performance validation
-- ✅ Format-specific optimization data
+- 91.7% Runway | 73.2% Venti Animated | 59.5% Venti Video Out-Stream
+- ✅ Proven H1 performance validation across all formats
+- ✅ Format-specific optimization data for dual Venti approach
 - ✅ Cross-platform consistency
 - ✅ Real-time fraud detection
 
@@ -516,24 +518,25 @@ IAS (Supplementary)
 
 WHY ATTENTION > TRADITIONAL VIEWABILITY
 
-Venti Video Paradox: 59.5% viewability but 14.7s average engagement proves user intent over passive exposure
+Dual Venti Strategy: Venti Animated (73.2% viewability, 18.3s engagement) optimizes for premium sites while Venti Video out-stream (59.5% viewability, 14.7s engagement) proves selective high-intent user engagement
 
-Quality vs Quantity: Lower viewability on premium content sites correlates with higher purchase intent and brand recall
+Context-Optimized Performance: Venti Animated excels on premium content sites with both high viewability and engagement, while Venti Video out-stream creates quality engagement on lifestyle/entertainment sites despite lower initial viewability
 
-Business Impact: $12.49 eCPM (2.5x industry) validates attention-based measurement approach
+Business Impact: $12.49 eCPM (2.5x industry) validates dual format approach with context-appropriate measurement
 
 H2 2025 ENHANCED INVENTORY STRATEGY
 
-1. Lighthouse Exchange for Venti Video (High Impact Upgrade)
+1. Lighthouse Exchange for Venti Video Out-Stream (High Impact Upgrade)
 Strategic Benefits:
-- Enhanced viewability measurement with attention scoring
-- Video-enabled Lighthouse maintains engagement quality
-- Premium publisher inventory access
-- Reduced inventory competition vs. standard video
+- Enhanced viewability measurement with attention scoring for out-stream video
+- Video-enabled Lighthouse maintains selective engagement quality
+- Premium publisher inventory access for out-stream placements
+- Reduced inventory competition vs. standard in-stream video
+- Preserves Venti Animated for premium content environments
 
 Projected Performance:
-- eCPM: $15.20 (+22% vs Venti)
-- Viewability: 78% (+31% improvement)
+- eCPM: $15.20 (+22% vs Venti Video)
+- Viewability: 68% (+14% improvement)
 
 2. Enhanced CTV Integration (Net New Inventory)
 Four High-Impact Video Units:
@@ -585,8 +588,8 @@ Expected Impact: 40% improvement in audience quality
 Activate four high-impact video formats to diversify inventory portfolio
 Revenue Potential: $1.2M additional H2 revenue
 
-3. Ongoing: Lighthouse Exchange
-Migrate high-performing Venti inventory to premium Lighthouse placements
+3. Ongoing: Lighthouse Exchange for Venti Video
+Migrate Venti Video out-stream inventory to premium Lighthouse placements while maintaining Venti Animated for premium content sites
 eCPM Improvement: 22% increase to $15.20
 
 H2 2025 IMPLEMENTATION TIMELINE
@@ -602,8 +605,9 @@ August 2025 - Enhanced CTV Unit Launch
 - Performance optimization based on early results
 
 September 2025 - Lighthouse Exchange Migration
-- Progressive Venti-to-Lighthouse transition
-- Viewability and engagement optimization
+- Progressive Venti Video out-stream to Lighthouse transition
+- Maintain Venti Animated on premium content sites
+- Viewability and engagement optimization across dual format strategy
 - Full portfolio performance analysis
 
 NEXT STEPS
