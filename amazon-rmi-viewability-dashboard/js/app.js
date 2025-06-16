@@ -18,6 +18,7 @@ class RMIDashboard {
         this.startNarrativeRotation();
         this.animateMetrics();
         this.updateTimestamp();
+        this.initializeEmailFeatures();
     }
 
     setupEventListeners() {
@@ -85,7 +86,8 @@ class RMIDashboard {
             'validator': 0, // opening
             'tracker': 1,   // building
             'specialist': 2, // climax
-            'assessor': 3   // resolution
+            'assessor': 3,   // resolution
+            'strategist': 4  // future
         };
 
         const stepIndex = narrativeMap[persona] || 0;
@@ -415,6 +417,254 @@ class RMIDashboard {
                 day: 'numeric'
             });
         }
+
+        // Update email date
+        const emailDate = document.getElementById('emailDate');
+        if (emailDate) {
+            const now = new Date();
+            emailDate.textContent = now.toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+    }
+
+    initializeEmailFeatures() {
+        // Copy email button
+        const copyBtn = document.getElementById('copyEmailBtn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                this.copyEmailToClipboard();
+            });
+        }
+
+        // Export PDF button
+        const exportBtn = document.getElementById('exportEmailBtn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', () => {
+                this.exportEmailToPDF();
+            });
+        }
+    }
+
+    copyEmailToClipboard() {
+        const emailContent = document.querySelector('.email-content');
+        if (!emailContent) return;
+
+        // Create a formatted text version of the email
+        const emailText = this.formatEmailForCopy();
+        
+        navigator.clipboard.writeText(emailText).then(() => {
+            // Show feedback
+            const copyBtn = document.getElementById('copyEmailBtn');
+            const originalText = copyBtn.innerHTML;
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = originalText;
+                copyBtn.style.background = 'rgba(255, 255, 255, 0.1)';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy email:', err);
+            // Fallback: select text
+            const range = document.createRange();
+            range.selectNode(emailContent);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+        });
+    }
+
+    formatEmailForCopy() {
+        const emailData = {
+            to: 'Caroline Johnson <caroline.johnson@amazon.com>',
+            from: 'RMI Strategy Team <rmi-strategy@kargo.com>',
+            subject: 'H2 2025 RMI Strategy: Viewability Methodology & Enhanced Inventory Recommendations',
+            date: new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            })
+        };
+
+        return `To: ${emailData.to}
+From: ${emailData.from}
+Subject: ${emailData.subject}
+Date: ${emailData.date}
+
+EXECUTIVE SUMMARY
+Based on our H1 2025 RMI campaign analysis ($2.38M revenue, 190.6M impressions, 61.5% peak win rate), we recommend a comprehensive H2 strategy focusing on enhanced viewability measurement, premium inventory expansion, and clean room activation for holistic audience targeting.
+
+VIEWABILITY MEASUREMENT STRATEGY: IAS + DOUBLEVERIFY DUAL VALIDATION
+
+DoubleVerify (Primary)
+- 91.7% Runway | 76.7% Enhanced Pre-Roll
+- ✅ Proven H1 performance validation
+- ✅ Format-specific optimization data
+- ✅ Cross-platform consistency
+- ✅ Real-time fraud detection
+
+IAS (Supplementary)
+- Additional Quality Layer
+- 🔍 Cross-verification of DV metrics
+- 🔍 Enhanced attention measurement
+- 🔍 Brand safety redundancy
+- 🔍 Market standard compliance
+
+WHY ATTENTION > TRADITIONAL VIEWABILITY
+
+Venti Video Paradox: 59.5% viewability but 14.7s average engagement proves user intent over passive exposure
+
+Quality vs Quantity: Lower viewability on premium content sites correlates with higher purchase intent and brand recall
+
+Business Impact: $12.49 eCPM (2.5x industry) validates attention-based measurement approach
+
+H2 2025 ENHANCED INVENTORY STRATEGY
+
+1. Lighthouse Exchange for Venti Video (High Impact Upgrade)
+Strategic Benefits:
+- Enhanced viewability measurement with attention scoring
+- Video-enabled Lighthouse maintains engagement quality
+- Premium publisher inventory access
+- Reduced inventory competition vs. standard video
+
+Projected Performance:
+- eCPM: $15.20 (+22% vs Venti)
+- Viewability: 78% (+31% improvement)
+
+2. Enhanced CTV Integration (Net New Inventory)
+Four High-Impact Video Units:
+- Premium Pre-Roll: $26.50 eCPM (Display-enabled, full ad set population)
+- Interactive Mid-Roll: $22.80 eCPM (Engagement-driven format)
+- Companion Display: $18.90 eCPM (Synchronized video-display units)
+- Connected Audio: $14.70 eCPM (Premium audio inventory)
+
+User Experience Superiority:
+- 🎯 Superior to standard in-banner video experiences
+- 📺 Native CTV environment integration
+- 🔊 Multi-sensory engagement (audio + visual)
+- 📱 Cross-device attribution capability
+
+CLEAN ROOM RELAUNCH: STRATEGIC INTEGRATION PLAN
+
+Dual-Layered Log Level Export Architecture (CRITICAL PRIORITY)
+
+Layer 1: Campaign Performance Data
+- Real-time bid data and win/loss attribution
+- Impression-level viewability and engagement metrics
+- Cross-device journey mapping
+- Conversion attribution with privacy preservation
+
+Layer 2: First-Party Audience Integration
+- Amazon DSP audience matching (privacy-compliant)
+- Kargo behavioral segmentation data
+- Cross-platform lookalike modeling
+- Real-time audience quality scoring
+
+Holistic Retargeting Activation Methodology:
+1. First-Party Data Ingestion → Amazon customer journey data + Kargo engagement signals
+2. Cross-Platform Matching → Privacy-safe audience stitching across Amazon, TTD, and Kargo inventory
+3. Smart Activation → Real-time bidding optimization with audience quality weighting
+
+Addressing Trade Desk PMP Limitations:
+- PMP Silo Challenge: TTD's isolated PMP environments limit cross-deal optimization
+  Clean Room Solution: Universal audience layer enables cross-PMP insights
+- Data Portability: Limited audience export capabilities from TTD ecosystem
+  Bidirectional Flow: Clean room enables secure data exchange both directions
+
+SILVER BULLET RECOMMENDATIONS
+
+1. Immediate: Clean Room Relaunch
+Deploy dual-layered architecture within 30 days to capture H2 campaign data from day one
+Expected Impact: 40% improvement in audience quality
+
+2. Q3 Launch: Enhanced CTV Units
+Activate four high-impact video formats to diversify inventory portfolio
+Revenue Potential: $1.2M additional H2 revenue
+
+3. Ongoing: Lighthouse Exchange
+Migrate high-performing Venti inventory to premium Lighthouse placements
+eCPM Improvement: 22% increase to $15.20
+
+H2 2025 IMPLEMENTATION TIMELINE
+
+July 2025 - Clean Room Architecture Deployment
+- Dual-layer data export configuration
+- Privacy-compliant audience matching setup
+- Initial testing with 10% campaign budget
+
+August 2025 - Enhanced CTV Unit Launch
+- Premium Pre-Roll and Interactive Mid-Roll activation
+- Companion Display format testing
+- Performance optimization based on early results
+
+September 2025 - Lighthouse Exchange Migration
+- Progressive Venti-to-Lighthouse transition
+- Viewability and engagement optimization
+- Full portfolio performance analysis
+
+NEXT STEPS
+Please confirm your approval for the clean room relaunch initiative, and we'll schedule a technical implementation call with your DSP and data teams for next week.
+
+RMI Strategy Team
+Senior Manager, Strategic Partnerships
+rmi-strategy@kargo.com
+Direct: (555) 123-4567
+
+This strategic analysis is based on verified H1 2025 campaign data and represents Kargo's recommended approach for H2 optimization. All revenue projections are estimates based on historical performance patterns.`;
+    }
+
+    exportEmailToPDF() {
+        // Create a simplified version for PDF export
+        const emailContent = document.querySelector('.email-content');
+        if (!emailContent) return;
+
+        // Open print dialog which can save as PDF
+        const printWindow = window.open('', '_blank');
+        const emailHTML = `
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>RMI Strategy Email - H2 2025 Recommendations</title>
+                <style>
+                    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; }
+                    h1, h2, h3 { color: #232F3E; }
+                    .email-header { border-bottom: 2px solid #6B46C1; padding-bottom: 20px; margin-bottom: 30px; }
+                    .section { margin-bottom: 30px; }
+                    ul { padding-left: 20px; }
+                    .metric-highlight { background: #6B46C1; color: white; padding: 5px 10px; border-radius: 5px; }
+                    @media print { body { margin: 20px; } }
+                </style>
+            </head>
+            <body>
+                <div class="email-header">
+                    <h1>H2 2025 RMI Strategy: Viewability Methodology & Enhanced Inventory Recommendations</h1>
+                    <p><strong>To:</strong> Caroline Johnson &lt;caroline.johnson@amazon.com&gt;</p>
+                    <p><strong>From:</strong> RMI Strategy Team &lt;rmi-strategy@kargo.com&gt;</p>
+                    <p><strong>Date:</strong> ${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                </div>
+                ${emailContent.innerHTML}
+            </body>
+            </html>
+        `;
+        
+        printWindow.document.write(emailHTML);
+        printWindow.document.close();
+        
+        // Show feedback
+        const exportBtn = document.getElementById('exportEmailBtn');
+        const originalText = exportBtn.innerHTML;
+        exportBtn.innerHTML = '<i class="fas fa-check"></i> Opening...';
+        exportBtn.style.background = 'rgba(16, 185, 129, 0.2)';
+        
+        setTimeout(() => {
+            exportBtn.innerHTML = originalText;
+            exportBtn.style.background = 'rgba(255, 255, 255, 0.1)';
+            printWindow.print();
+        }, 1000);
     }
 
     // Method to highlight specific insights based on current data
@@ -497,9 +747,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 case '4':
                     dashboard.switchPersona('assessor');
                     break;
+                case '5':
+                    dashboard.switchPersona('strategist');
+                    break;
                 case 'e':
                     // Export data for Caroline
                     console.log('Dashboard Data:', dashboard.exportDashboardData());
+                    break;
+                case 'c':
+                    // Copy email to clipboard
+                    if (dashboard.currentPersona === 'strategist') {
+                        dashboard.copyEmailToClipboard();
+                    }
                     break;
             }
         }
