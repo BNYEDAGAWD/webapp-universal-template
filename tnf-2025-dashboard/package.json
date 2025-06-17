@@ -1,0 +1,23 @@
+{
+  "name": "tnf-2025-dashboard",
+  "version": "1.0.0",
+  "description": "Interactive TNF 2025 Partnership Proposal Dashboard for Kargo × Amazon Prime Video - Desktop Optimized",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "build": "echo 'Static site - no build needed'",
+    "deploy": "echo 'Deploy to GitHub Pages via Actions'"
+  },
+  "keywords": [
+    "TNF",
+    "Thursday Night Football",
+    "Amazon Prime Video",
+    "Kargo",
+    "Interactive Dashboard",
+    "Advertising",
+    "Proposal",
+    "Desktop Optimized"
+  ],
+  "author": "Kargo Sales Team",
+  "license": "MIT"
+}

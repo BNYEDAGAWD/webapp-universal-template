@@ -11,7 +11,6 @@ class TNFAnimationManager {
 
     initializeGSAP() {
         if (typeof gsap === 'undefined') {
-            console.warn('GSAP not loaded. Animations will be disabled.');
             return;
         }
 

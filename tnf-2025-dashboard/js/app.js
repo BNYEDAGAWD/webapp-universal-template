@@ -25,15 +25,14 @@ class TNFDashboard {
         const missing = dependencies.filter(dep => typeof window[dep] === 'undefined');
         
         if (missing.length > 0) {
-            console.error('Missing dependencies:', missing);
+            throw new Error(`Missing dependencies: ${missing.join(', ')}`);
         }
     }
 
     setupDOM() {
         this.root = document.getElementById('root');
         if (!this.root) {
-            console.error('Root element not found');
-            return;
+            throw new Error('Root element not found');
         }
         this.root.innerHTML = this.getInitialHTML();
     }

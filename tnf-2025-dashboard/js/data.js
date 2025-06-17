@@ -270,7 +270,6 @@ class TNFCampaignData {
             .reduce((sum, week) => sum + week.percentage, 0);
         
         if (Math.abs(weeklyTotal - 100) > 0.1) {
-            console.warn(`Weekly allocation total: ${weeklyTotal}% (should be 100%)`);
         }
 
         Object.values(TNFCampaignData.INVESTMENT_TIERS).forEach(tier => {
@@ -278,7 +277,6 @@ class TNFCampaignData {
                 .reduce((sum, format) => sum + format.amount, 0);
             
             if (formatTotal !== tier.total) {
-                console.warn(`Tier ${tier.name} format total: $${formatTotal} (should be $${tier.total})`);
             }
         });
 
